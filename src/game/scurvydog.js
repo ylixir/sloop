@@ -1,15 +1,19 @@
 /* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */ 
 /* global game */
 /* jshint asi: true */
+/* Copyright © 2016 Jon Allen <ylixir@gmail.com>
+ * Copyright © 2016 erik4999 <erik4999@users.noreply.github.com>
+ * This work is free. You can redistribute it and/or modify it under the
+ * terms of the Do What The Fuck You Want To Public License, Version 2,
+ * as published by Sam Hocevar. See the COPYING file for more details.
+ */
 
 game.module('game.main.scurvydog').body(function() {
 	game.createClass('scurvydog', 'PhysicsSprite', {
         texture: 'panda.png',
-		bearing : null,
-		init : function(x, y, vs, hs) {
+		init : function(x, y) {
             this.super();
 			this.position.set(x,y);
-			this.bearing = new game.Vector(vs, hs);
 			// it seems strange to add this class to game.scene.stage from its definition
 
 			this.body.collisionGroup = 1;
@@ -31,12 +35,11 @@ game.module('game.main.scurvydog').body(function() {
 		},*/
 		collide : function() {
 			console.log("crash");
-			this.bearing.multiply(-1);
 		},
-
+        /*
 		update : function() {
 			this.position.multiplyAdd(this.bearing, game.system.delta);
-		},
+		},*/
 		poop : function() {
 			var grap = new game.Graphics();
 			grap.fillColor = '#7A5230';

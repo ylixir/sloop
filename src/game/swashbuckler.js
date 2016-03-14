@@ -1,3 +1,12 @@
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */ 
+/* global game */
+/* jshint asi: true */
+/* Copyright © 2016 Jon Allen <ylixir@gmail.com>
+ * Copyright © 2016 erik4999 <erik4999@users.noreply.github.com>
+ * This work is free. You can redistribute it and/or modify it under the
+ * terms of the Do What The Fuck You Want To Public License, Version 2,
+ * as published by Sam Hocevar. See the COPYING file for more details.
+ */
 game.module('game.main.swashbuckler').body(function() {
 	game.createClass('swashbuckler', {
 		speed : 100,
