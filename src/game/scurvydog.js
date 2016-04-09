@@ -11,17 +11,14 @@
 game.module('game.main.scurvydog').body(function() {
 	game.createClass('scurvydog', 'PhysicsSprite', {
         texture: 'panda.png',
-		init : function(x, y) {
-            this.super();
-			this.position.set(x,y);
-			// it seems strange to add this class to game.scene.stage from its definition
-
+		init : function(x, y) {	
+			
+            this.super('panda.png',48,48);
+			this.position.set(x, y);
 			this.body.collisionGroup = 1;
 			this.body.collideAgainst.push(0);
 			this.body.collide = this.collide.bind(this);
 			this.addTo(game.scene.stage);
-
-			//game.scene.addTimer(liveCheckTime, this.remove.bind(this))
 		},
         /*
 		remove : function() {
@@ -34,17 +31,14 @@ game.module('game.main.scurvydog').body(function() {
 
 		},*/
 		collide : function() {
-			console.log("crash");
+		window.alert("Hi there collidr");
 		},
+		remove : function() {
+			this.remove();
+		}
         /*
 		update : function() {
 			this.position.multiplyAdd(this.bearing, game.system.delta);
 		},*/
-		poop : function() {
-			var grap = new game.Graphics();
-			grap.fillColor = '#7A5230';
-			grap.drawCircle(this.position.x, this.position.y, 10);
-			grap.addTo(game.scene.stage);
-		}
 	});
 });
