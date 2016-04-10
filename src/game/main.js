@@ -12,10 +12,12 @@
 game.module('game.main').body(function() {
 
 	var spawnRate = 1000; // in milliseconds?
-    lanes = []; //this is gonna have all the lanes, with their bearings, etc.
+    lanes = [];//this is gonna have all the lanes, with their bearings, etc.
     laneCount = 4; //this is the number of lanes in one direction, not total
+    bullets = [];
 
 	game.addAsset('panda.png');
+	game.addAsset('bullet.png');
 
 	game.createScene('Main', {
 		backgroundColor : '#B3DBE9',
@@ -110,11 +112,14 @@ game.module('game.main').body(function() {
 			}, true);
 
 		},
-		keydown : function(key) {
-			if (key === 'SPACE') {
-				this.player.poop();
-			}
-		}
-	});
+		 keydown: function(key) {
+		        if (key === 'SPACE') {
+		        	bullets.unshift( new game.bullet(player.sprite.position.x, player.sprite.position.y, 0));
+		        	
+		        }
+		        if (key === 'P')
+		        	window.alert("Length"+bullets.length);
+		    },
+  });
 
 });
