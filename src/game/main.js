@@ -114,7 +114,7 @@ game.module('game.main').body(function() {
 		},
 		 keydown: function(key) {
 		        if (key === 'SPACE') {
-		        	bullets.unshift( new game.bullet(player.sprite.position.x, player.sprite.position.y, 0));
+		        	bullets.unshift(new game.bullet(this.player.sprite.position.x, this.player.sprite.position.y, 0));
 		        	
 		        }
 		        if (key === 'P')
